@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let resultat of resultats" class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ resultat.title }}</h5>
+          <p class="card-text">
+            <span *ngFor="let genre of resultat.genres" class="badge border border-1 border-muted bg-white text-muted me-1">{{ genre.name }}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-12" *ngIf="resultats.length > 0">
+      <button class="btn btn-white text-dark border border-1 border-dark mb-5" (click)="chargerNouvellePage(criteres)">Charger plus de résultats</button>
+    </div>
+  </div>
+</div>
